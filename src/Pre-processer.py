@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Load raw reviews
-df = pd.read_csv("C:/Users/firao/Desktop/PYTHON PROJECTS/KIAM PROJECTS/Customer-Experience-Analyticsdata/data/raw_reviews.csv")
+df = pd.read_csv("C:/Users/firao/Desktop/PYTHON PROJECTS/KIAM PROJECTS/Customer-Experience-Analytics/data/raw_reviews.csv")
 
 # Remove duplicates
 df.drop_duplicates(inplace=True)
@@ -13,5 +13,5 @@ df.dropna(subset=["content", "score"], inplace=True)
 df['date'] = pd.to_datetime(df['at']).dt.date
 
 # Save cleaned data
-df.to_csv("data/clean_reviews.csv", index=False)
+df.to_csv("C:/Users/firao/Desktop/PYTHON PROJECTS/KIAM PROJECTS/Customer-Experience-Analytics/data/clean_reviews.csv", index=False)
 print("Cleaned reviews saved to data/clean_reviews.csv")

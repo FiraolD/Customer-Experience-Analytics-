@@ -1,6 +1,6 @@
 from google_play_scraper import reviews, Sort
 import pandas as pd
-
+import os
 # Define app IDs for the three banks
 app_ids = {
     "CBE": "com.combanketh.mobilebanking",  # Replace with actual app ID
@@ -30,6 +30,7 @@ for bank, app_id in app_ids.items():
 
 # Combine all reviews into one DataFrame
 combined_reviews = pd.concat(all_reviews, ignore_index=True)
+
 
 # Save to CSV
 combined_reviews.to_csv("C:/Users/firao/Desktop/PYTHON PROJECTS/KIAM PROJECTS/Customer-Experience-Analytics/data/raw_reviews.csv", index=False)
