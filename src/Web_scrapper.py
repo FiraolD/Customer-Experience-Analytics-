@@ -3,9 +3,9 @@ import pandas as pd
 
 # Define app IDs for the three banks
 app_ids = {
-    "CBE": "com.commercialbank.mobile",  # Replace with actual app ID
-    "BOA": "com.bankofabyssinia.mobile",  # Replace with actual app ID
-    "Dashen": "com.dashenbank.mobile"  # Replace with actual app ID
+    "CBE": "com.combanketh.mobilebanking",  # Replace with actual app ID
+    "BOA": "com.boa.boaMobileBanking",  # Replace with actual app ID
+    "Dashen": "com.dashen.dashensuperapp"  # Replace with actual app ID
 }
 
 # Function to scrape reviews
@@ -32,5 +32,5 @@ for bank, app_id in app_ids.items():
 combined_reviews = pd.concat(all_reviews, ignore_index=True)
 
 # Save to CSV
-combined_reviews.to_csv("C:/Users/firao/Desktop/PYTHON PROJECTS/KIAM PROJECTS/Customer-Experience-Analyticsdata/data/raw_reviews.csv", index=False)
+combined_reviews.to_csv("C:/Users/firao/Desktop/PYTHON PROJECTS/KIAM PROJECTS/Customer-Experience-Analytics/data/raw_reviews.csv", index=False)
 print("Reviews saved to data/raw_reviews.csv")
