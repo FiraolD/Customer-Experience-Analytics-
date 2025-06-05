@@ -1,5 +1,7 @@
+import pandas as pd
 from textblob import TextBlob
 
+df = pd.read_csv("C:/Users/firao/Desktop/PYTHON PROJECTS/KIAM PROJECTS/Customer-Experience-Analytics/data/raw_reviews.csv")
 # Function to calculate sentiment
 def get_sentiment(text):
     blob = TextBlob(str(text))
@@ -15,5 +17,5 @@ def get_sentiment(text):
 df['sentiment'] = df['content'].apply(get_sentiment)
 
 # Save results
-df.to_csv("data/sentiment_reviews.csv", index=False)
+df.to_csv("C:/Users/firao/Desktop/PYTHON PROJECTS/KIAM PROJECTS/Customer-Experience-Analytics/data/sentiment_reviews2.csv", index=False)
 print("Sentiment analysis completed and saved.")
