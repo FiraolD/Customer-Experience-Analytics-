@@ -1,13 +1,16 @@
 #Pre-processor
 import pandas as pd
 import re
-import nltk
-from nltk.corpus import stopwords
-from nltk.tokenize import word_tokenize
-from nltk.stem import WordNetLemmatizer
-nltk.download('stopwords')
-nltk.download('punkt')
-nltk.download('wordnet')
+#import nltk
+#from nltk.corpus import stopwords
+#from nltk.tokenize import word_tokenize
+#from nltk.stem import WordNetLemmatizer
+#nltk.download('stopwords', quiet=True)
+#nltk.download('punkt',  quiet=True)
+#nltk.download('wordnet',  quiet=True)
+
+# Initialize lemmatizer (kept as is)
+#lemmatizer = WordNetLemmatizer()
 
 # Load raw reviews
 df = pd.read_csv("C:/Users/firao/Desktop/PYTHON PROJECTS/KIAM PROJECTS/Customer-Experience-Analytics/data/raw_reviews.csv")
@@ -16,8 +19,9 @@ df = pd.read_csv("C:/Users/firao/Desktop/PYTHON PROJECTS/KIAM PROJECTS/Customer-
 df.drop_duplicates(inplace=True)
 df.dropna(subset=["content", "score"], inplace=True)
 # Initialize
-stop_words = set(stopwords.words('english'))
-lemmatizer = WordNetLemmatizer()
+#stop_words = set(stopwords.words('english'))
+#lemmatizer = WordNetLemmatizer()
+
 
 # Normalize dates
 df['date'] = pd.to_datetime(df['at']).dt.date
@@ -32,12 +36,12 @@ def clean_text(text):
     text = re.sub(r'\s+', ' ', text).strip()
 
     # Tokenize
-    tokens = word_tokenize(text)
+    #tokens = word_tokenize(text)
 
     # Remove stopwords and lemmatize
-    cleaned = [lemmatizer.lemmatize(word) for word in tokens if word not in stop_words]
+    #cleaned = [lemmatizer.lemmatize(word) for word in tokens if word not in stopwords]
 
-    return ' '.join(cleaned)  
+    return text
 
 # Apply cleaning
 df['cleaned_content'] = df['content'].apply(clean_text)  

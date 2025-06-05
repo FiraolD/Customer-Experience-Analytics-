@@ -9,7 +9,7 @@ def get_sentiment(text):
     if polarity > 0:
         return "positive"
     elif polarity < 0:
-        return "negative"
+        return "-negative"
     else:
         return "neutral"
 
@@ -17,5 +17,5 @@ def get_sentiment(text):
 df['sentiment'] = df['content'].apply(get_sentiment)
 
 # Save results
-df.to_csv("C:/Users/firao/Desktop/PYTHON PROJECTS/KIAM PROJECTS/Customer-Experience-Analytics/data/sentiment_reviews2.csv", index=False)
+df.to_csv("C:/Users/firao/Desktop/PYTHON PROJECTS/KIAM PROJECTS/Customer-Experience-Analytics/data/sentiment_reviews.csv", index=False)
 print("Sentiment analysis completed and saved.")
