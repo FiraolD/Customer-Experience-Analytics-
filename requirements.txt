@@ -6,3 +6,4 @@ textblob
 oracledb
 matplotlib
 seaborn
+re
